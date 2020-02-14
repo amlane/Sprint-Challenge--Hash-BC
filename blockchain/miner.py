@@ -6,7 +6,7 @@ import sys
 from uuid import uuid4
 
 from timeit import default_timer as timer
-from random import randint
+from random import randint, random
 
 
 def proof_of_work(last_proof):
@@ -22,10 +22,10 @@ def proof_of_work(last_proof):
     start = timer()
 
     print("Searching for next proof")
-    proof = -4000000000000
+    proof = random()
     #  TODO: Your code here
     while valid_proof(last_proof, proof) is False:
-        proof -= 1
+        proof -= random() / random()
     print("Proof found: " + str(proof) + " in " + str(timer() - start))
     return proof
 
