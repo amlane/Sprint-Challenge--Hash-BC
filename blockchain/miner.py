@@ -22,10 +22,10 @@ def proof_of_work(last_proof):
     start = timer()
 
     print("Searching for next proof")
-    proof = random()
+    proof = 0
     #  TODO: Your code here
     while valid_proof(last_proof, proof) is False:
-        proof -= random() / random()
+        proof += random() + 1
     print("Proof found: " + str(proof) + " in " + str(timer() - start))
     return proof
 
